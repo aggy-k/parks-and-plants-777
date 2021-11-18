@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,5 +32,21 @@
     color: white;
     text-decoration: none;
     opacity: 1;
+  }
+}
+
+.card-tags {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 80%;
+  span {
+    background: $blue;
+    font-size: .7em;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+  a {
+    color: white;
   }
 }

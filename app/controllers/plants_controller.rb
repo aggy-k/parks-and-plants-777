@@ -7,12 +7,21 @@ class PlantsController < ApplicationController
 
     if @plant.save
       redirect_to garden_path(@garden)
+      # redirect_to gardens_path
     else
       render 'gardens/show'
     end
   end
 
+  def update
+    @plant = Plant.find(params[:id])
+    if @plant.update(plant_params)
+      redirect_to garden_path(@plant.garden)
+    end
+  end
+
   def destroy
+
     @plant = Plant.find(params[:id])
     @plant.destroy
     redirect_to garden_path(@plant.garden)
@@ -23,3 +32,21 @@ class PlantsController < ApplicationController
       params.require(:plant).permit(:name, :image_url)
     end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
